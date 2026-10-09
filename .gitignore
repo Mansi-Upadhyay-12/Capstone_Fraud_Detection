@@ -1,0 +1,32 @@
+# Raw large dataset files (> 100MB)
+dataset/
+*.csv
+*.txt
+!requirements.txt
+
+# Processed graph binaries (> 100MB)
+processed/*.pt
+processed/*.npz
+!processed/metadata.json
+
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.ipynb_checkpoints/
+
+# Environment and IDE
+.env
+.venv
+env/
+venv/
+ENV/
+.vscode/
+.idea/
+.gemini/
+scratch/
+.system_generated/
+
+# OS specific
+Thumbs.db
+.DS_Store
