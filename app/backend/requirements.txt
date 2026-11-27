@@ -1,0 +1,22 @@
+# FraudLens Stage 6 Backend & Inference Requirements
+# Verified against Python 3.12.0 virtual environment (./venv)
+
+fastapi==0.165.0
+uvicorn==0.54.0
+python-multipart==0.0.34
+pydantic==2.14.4
+
+# Frozen Stage 2 / 4H / 5B / 5C Inference & Graph XAI
+torch==2.14.1
+torch-geometric==2.8.0.post1
+scikit-learn==1.9.1
+pandas==3.0.6
+numpy==2.5.3
+scipy==1.18.1
+joblib==1.6.0
+networkx==3.7
+
+# Verification & Browser E2E Testing
+httpx==0.29.0
+pytest==9.2.0
+playwright==1.65.2

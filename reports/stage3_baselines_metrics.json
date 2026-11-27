@@ -1,0 +1,308 @@
+{
+    "Logistic_Regression": {
+        "model_type": "Linear Classifier (Logistic Regression)",
+        "hyperparameters": {
+            "class_weight": "balanced",
+            "C": 1.0,
+            "max_iter": 1000,
+            "solver": "lbfgs"
+        },
+        "optimal_threshold": 0.9,
+        "training_time_seconds": 2.252,
+        "validation_metrics": {
+            "threshold_used": 0.9,
+            "illicit_precision": 0.3931,
+            "illicit_recall": 0.6726,
+            "illicit_f1": 0.4962,
+            "licit_precision": 0.9669,
+            "licit_recall": 0.902,
+            "licit_f1": 0.9333,
+            "macro_f1": 0.7147,
+            "micro_f1": 0.8822,
+            "roc_auc": 0.8983,
+            "pr_auc": 0.3295,
+            "confusion_matrix": {
+                "true_negatives_licit": 6453,
+                "false_positives_false_alarm": 701,
+                "false_negatives_missed_fraud": 221,
+                "true_positives_caught_fraud": 454
+            },
+            "total_samples": 7829,
+            "illicit_count": 675,
+            "licit_count": 7154
+        },
+        "test_metrics_optimal_threshold": {
+            "threshold_used": 0.9,
+            "illicit_precision": 0.2383,
+            "illicit_recall": 0.5,
+            "illicit_f1": 0.3228,
+            "licit_precision": 0.9745,
+            "licit_recall": 0.9227,
+            "licit_f1": 0.9479,
+            "macro_f1": 0.6353,
+            "micro_f1": 0.9032,
+            "roc_auc": 0.8574,
+            "pr_auc": 0.194,
+            "confusion_matrix": {
+                "true_negatives_licit": 7781,
+                "false_positives_false_alarm": 652,
+                "false_negatives_missed_fraud": 204,
+                "true_positives_caught_fraud": 204
+            },
+            "total_samples": 8841,
+            "illicit_count": 408,
+            "licit_count": 8433
+        },
+        "test_metrics_default_threshold": {
+            "threshold_used": 0.5,
+            "illicit_precision": 0.1307,
+            "illicit_recall": 0.7598,
+            "illicit_f1": 0.223,
+            "licit_precision": 0.9849,
+            "licit_recall": 0.7555,
+            "licit_f1": 0.8551,
+            "macro_f1": 0.539,
+            "micro_f1": 0.7557,
+            "roc_auc": 0.8574,
+            "pr_auc": 0.194,
+            "confusion_matrix": {
+                "true_negatives_licit": 6371,
+                "false_positives_false_alarm": 2062,
+                "false_negatives_missed_fraud": 98,
+                "true_positives_caught_fraud": 310
+            },
+            "total_samples": 8841,
+            "illicit_count": 408,
+            "licit_count": 8433
+        }
+    },
+    "Random_Forest": {
+        "model_type": "Tree Ensemble (Random Forest)",
+        "hyperparameters": {
+            "n_estimators": 100,
+            "max_depth": 16,
+            "class_weight": "balanced",
+            "random_state": 42
+        },
+        "optimal_threshold": 0.59,
+        "training_time_seconds": 2.826,
+        "validation_metrics": {
+            "threshold_used": 0.59,
+            "illicit_precision": 0.9652,
+            "illicit_recall": 0.8637,
+            "illicit_f1": 0.9116,
+            "licit_precision": 0.9873,
+            "licit_recall": 0.9971,
+            "licit_f1": 0.9921,
+            "macro_f1": 0.9519,
+            "micro_f1": 0.9856,
+            "roc_auc": 0.9773,
+            "pr_auc": 0.9279,
+            "confusion_matrix": {
+                "true_negatives_licit": 7133,
+                "false_positives_false_alarm": 21,
+                "false_negatives_missed_fraud": 92,
+                "true_positives_caught_fraud": 583
+            },
+            "total_samples": 7829,
+            "illicit_count": 675,
+            "licit_count": 7154
+        },
+        "test_metrics_optimal_threshold": {
+            "threshold_used": 0.59,
+            "illicit_precision": 0.8655,
+            "illicit_recall": 0.473,
+            "illicit_f1": 0.6117,
+            "licit_precision": 0.9751,
+            "licit_recall": 0.9964,
+            "licit_f1": 0.9856,
+            "macro_f1": 0.7987,
+            "micro_f1": 0.9723,
+            "roc_auc": 0.8351,
+            "pr_auc": 0.5458,
+            "confusion_matrix": {
+                "true_negatives_licit": 8403,
+                "false_positives_false_alarm": 30,
+                "false_negatives_missed_fraud": 215,
+                "true_positives_caught_fraud": 193
+            },
+            "total_samples": 8841,
+            "illicit_count": 408,
+            "licit_count": 8433
+        },
+        "test_metrics_default_threshold": {
+            "threshold_used": 0.5,
+            "illicit_precision": 0.705,
+            "illicit_recall": 0.4804,
+            "illicit_f1": 0.5714,
+            "licit_precision": 0.9752,
+            "licit_recall": 0.9903,
+            "licit_f1": 0.9827,
+            "macro_f1": 0.7771,
+            "micro_f1": 0.9667,
+            "roc_auc": 0.8351,
+            "pr_auc": 0.5458,
+            "confusion_matrix": {
+                "true_negatives_licit": 8351,
+                "false_positives_false_alarm": 82,
+                "false_negatives_missed_fraud": 212,
+                "true_positives_caught_fraud": 196
+            },
+            "total_samples": 8841,
+            "illicit_count": 408,
+            "licit_count": 8433
+        }
+    },
+    "Gradient_Boosting": {
+        "model_type": "Histogram-based Gradient Boosting (HistGradientBoostingClassifier)",
+        "hyperparameters": {
+            "max_iter": 100,
+            "max_depth": 8,
+            "learning_rate": 0.1,
+            "class_weight": "balanced",
+            "random_state": 42
+        },
+        "optimal_threshold": 0.79,
+        "training_time_seconds": 31.222,
+        "validation_metrics": {
+            "threshold_used": 0.79,
+            "illicit_precision": 0.9796,
+            "illicit_recall": 0.8519,
+            "illicit_f1": 0.9113,
+            "licit_precision": 0.9862,
+            "licit_recall": 0.9983,
+            "licit_f1": 0.9922,
+            "macro_f1": 0.9517,
+            "micro_f1": 0.9857,
+            "roc_auc": 0.9791,
+            "pr_auc": 0.9292,
+            "confusion_matrix": {
+                "true_negatives_licit": 7142,
+                "false_positives_false_alarm": 12,
+                "false_negatives_missed_fraud": 100,
+                "true_positives_caught_fraud": 575
+            },
+            "total_samples": 7829,
+            "illicit_count": 675,
+            "licit_count": 7154
+        },
+        "test_metrics_optimal_threshold": {
+            "threshold_used": 0.79,
+            "illicit_precision": 0.8853,
+            "illicit_recall": 0.473,
+            "illicit_f1": 0.6166,
+            "licit_precision": 0.9751,
+            "licit_recall": 0.997,
+            "licit_f1": 0.9859,
+            "macro_f1": 0.8013,
+            "micro_f1": 0.9729,
+            "roc_auc": 0.8848,
+            "pr_auc": 0.5646,
+            "confusion_matrix": {
+                "true_negatives_licit": 8408,
+                "false_positives_false_alarm": 25,
+                "false_negatives_missed_fraud": 215,
+                "true_positives_caught_fraud": 193
+            },
+            "total_samples": 8841,
+            "illicit_count": 408,
+            "licit_count": 8433
+        },
+        "test_metrics_default_threshold": {
+            "threshold_used": 0.5,
+            "illicit_precision": 0.5263,
+            "illicit_recall": 0.4902,
+            "illicit_f1": 0.5076,
+            "licit_precision": 0.9754,
+            "licit_recall": 0.9787,
+            "licit_f1": 0.977,
+            "macro_f1": 0.7423,
+            "micro_f1": 0.9561,
+            "roc_auc": 0.8848,
+            "pr_auc": 0.5646,
+            "confusion_matrix": {
+                "true_negatives_licit": 8253,
+                "false_positives_false_alarm": 180,
+                "false_negatives_missed_fraud": 208,
+                "true_positives_caught_fraud": 200
+            },
+            "total_samples": 8841,
+            "illicit_count": 408,
+            "licit_count": 8433
+        }
+    },
+    "MLP_Neural_Network": {
+        "model_type": "Deep Feed-Forward Neural Network (MLP)",
+        "architecture": "182 -> Linear(128) -> BatchNorm -> ReLU -> Dropout(0.3) -> Linear(64) -> BatchNorm -> ReLU -> Linear(1)",
+        "loss_function": "BCEWithLogitsLoss(pos_weight=7.6349)",
+        "best_epoch": 4,
+        "optimal_threshold": 0.89,
+        "training_time_seconds": 79.096,
+        "validation_metrics": {
+            "threshold_used": 0.89,
+            "illicit_precision": 0.7946,
+            "illicit_recall": 0.6933,
+            "illicit_f1": 0.7405,
+            "licit_precision": 0.9714,
+            "licit_recall": 0.9831,
+            "licit_f1": 0.9772,
+            "macro_f1": 0.8589,
+            "micro_f1": 0.9581,
+            "roc_auc": 0.9395,
+            "pr_auc": 0.7788,
+            "confusion_matrix": {
+                "true_negatives_licit": 7033,
+                "false_positives_false_alarm": 121,
+                "false_negatives_missed_fraud": 207,
+                "true_positives_caught_fraud": 468
+            },
+            "total_samples": 7829,
+            "illicit_count": 675,
+            "licit_count": 7154
+        },
+        "test_metrics_optimal_threshold": {
+            "threshold_used": 0.89,
+            "illicit_precision": 0.7143,
+            "illicit_recall": 0.4289,
+            "illicit_f1": 0.536,
+            "licit_precision": 0.9729,
+            "licit_recall": 0.9917,
+            "licit_f1": 0.9822,
+            "macro_f1": 0.7591,
+            "micro_f1": 0.9657,
+            "roc_auc": 0.836,
+            "pr_auc": 0.4742,
+            "confusion_matrix": {
+                "true_negatives_licit": 8363,
+                "false_positives_false_alarm": 70,
+                "false_negatives_missed_fraud": 233,
+                "true_positives_caught_fraud": 175
+            },
+            "total_samples": 8841,
+            "illicit_count": 408,
+            "licit_count": 8433
+        },
+        "test_metrics_default_threshold": {
+            "threshold_used": 0.5,
+            "illicit_precision": 0.2623,
+            "illicit_recall": 0.5245,
+            "illicit_f1": 0.3497,
+            "licit_precision": 0.9758,
+            "licit_recall": 0.9286,
+            "licit_f1": 0.9516,
+            "macro_f1": 0.6507,
+            "micro_f1": 0.91,
+            "roc_auc": 0.836,
+            "pr_auc": 0.4742,
+            "confusion_matrix": {
+                "true_negatives_licit": 7831,
+                "false_positives_false_alarm": 602,
+                "false_negatives_missed_fraud": 194,
+                "true_positives_caught_fraud": 214
+            },
+            "total_samples": 8841,
+            "illicit_count": 408,
+            "licit_count": 8433
+        }
+    }
+}

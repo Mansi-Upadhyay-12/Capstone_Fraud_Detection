@@ -1,0 +1,146 @@
+{
+    "GCN": {
+        "model_name": "Graph_Convolutional_Network_GCN",
+        "best_epoch": 29,
+        "training_time_seconds": 164.436,
+        "optimal_threshold": 0.8,
+        "validation_metrics": {
+            "threshold_used": 0.8,
+            "illicit_precision": 0.4709,
+            "illicit_recall": 0.3481,
+            "illicit_f1": 0.4003,
+            "licit_precision": 0.94,
+            "licit_recall": 0.9631,
+            "licit_f1": 0.9514,
+            "macro_f1": 0.6759,
+            "micro_f1": 0.9101,
+            "roc_auc": 0.8158,
+            "pr_auc": 0.3928,
+            "confusion_matrix": {
+                "true_negatives_licit": 6890,
+                "false_positives_false_alarm": 264,
+                "false_negatives_missed_fraud": 440,
+                "true_positives_caught_fraud": 235
+            },
+            "total_samples": 7829,
+            "illicit_count": 675,
+            "licit_count": 7154
+        },
+        "test_metrics_optimal_threshold": {
+            "threshold_used": 0.8,
+            "illicit_precision": 0.243,
+            "illicit_recall": 0.2132,
+            "illicit_f1": 0.2272,
+            "licit_precision": 0.9622,
+            "licit_recall": 0.9679,
+            "licit_f1": 0.965,
+            "macro_f1": 0.5961,
+            "micro_f1": 0.933,
+            "roc_auc": 0.7658,
+            "pr_auc": 0.1795,
+            "confusion_matrix": {
+                "true_negatives_licit": 8162,
+                "false_positives_false_alarm": 271,
+                "false_negatives_missed_fraud": 321,
+                "true_positives_caught_fraud": 87
+            },
+            "total_samples": 8841,
+            "illicit_count": 408,
+            "licit_count": 8433
+        },
+        "test_metrics_default_threshold": {
+            "threshold_used": 0.5,
+            "illicit_precision": 0.0702,
+            "illicit_recall": 0.902,
+            "illicit_f1": 0.1302,
+            "licit_precision": 0.9889,
+            "licit_recall": 0.4218,
+            "licit_f1": 0.5914,
+            "macro_f1": 0.3608,
+            "micro_f1": 0.444,
+            "roc_auc": 0.7658,
+            "pr_auc": 0.1795,
+            "confusion_matrix": {
+                "true_negatives_licit": 3557,
+                "false_positives_false_alarm": 4876,
+                "false_negatives_missed_fraud": 40,
+                "true_positives_caught_fraud": 368
+            },
+            "total_samples": 8841,
+            "illicit_count": 408,
+            "licit_count": 8433
+        }
+    },
+    "GAT": {
+        "model_name": "Graph_Attention_Network_GAT",
+        "best_epoch": 4,
+        "training_time_seconds": 117.969,
+        "optimal_threshold": 0.77,
+        "validation_metrics": {
+            "threshold_used": 0.77,
+            "illicit_precision": 0.3032,
+            "illicit_recall": 0.4578,
+            "illicit_f1": 0.3648,
+            "licit_precision": 0.9463,
+            "licit_recall": 0.9008,
+            "licit_f1": 0.9229,
+            "macro_f1": 0.6439,
+            "micro_f1": 0.8626,
+            "roc_auc": 0.796,
+            "pr_auc": 0.304,
+            "confusion_matrix": {
+                "true_negatives_licit": 6444,
+                "false_positives_false_alarm": 710,
+                "false_negatives_missed_fraud": 366,
+                "true_positives_caught_fraud": 309
+            },
+            "total_samples": 7829,
+            "illicit_count": 675,
+            "licit_count": 7154
+        },
+        "test_metrics_optimal_threshold": {
+            "threshold_used": 0.77,
+            "illicit_precision": 0.1235,
+            "illicit_recall": 0.4706,
+            "illicit_f1": 0.1956,
+            "licit_precision": 0.9704,
+            "licit_recall": 0.8384,
+            "licit_f1": 0.8995,
+            "macro_f1": 0.5476,
+            "micro_f1": 0.8214,
+            "roc_auc": 0.7986,
+            "pr_auc": 0.13,
+            "confusion_matrix": {
+                "true_negatives_licit": 7070,
+                "false_positives_false_alarm": 1363,
+                "false_negatives_missed_fraud": 216,
+                "true_positives_caught_fraud": 192
+            },
+            "total_samples": 8841,
+            "illicit_count": 408,
+            "licit_count": 8433
+        },
+        "test_metrics_default_threshold": {
+            "threshold_used": 0.5,
+            "illicit_precision": 0.0724,
+            "illicit_recall": 0.9706,
+            "illicit_f1": 0.1347,
+            "licit_precision": 0.9964,
+            "licit_recall": 0.3981,
+            "licit_f1": 0.5689,
+            "macro_f1": 0.3518,
+            "micro_f1": 0.4245,
+            "roc_auc": 0.7986,
+            "pr_auc": 0.13,
+            "confusion_matrix": {
+                "true_negatives_licit": 3357,
+                "false_positives_false_alarm": 5076,
+                "false_negatives_missed_fraud": 12,
+                "true_positives_caught_fraud": 396
+            },
+            "total_samples": 8841,
+            "illicit_count": 408,
+            "licit_count": 8433
+        }
+    }
+}

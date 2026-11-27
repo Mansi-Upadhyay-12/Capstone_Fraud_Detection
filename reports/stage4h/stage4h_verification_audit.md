@@ -1,0 +1,17 @@
+# Stage 4H Independent Verification & Leakage Audit Report
+
+**Audit Date:** 2026-11-26  
+**Scope:** Independent verification of Stage 4H RankGauss (`Experiment A`) and Leakage-Free OOF Hybrid GNN+HGB (`Experiment B`) across `models/stage4h/` (`34` saved artifacts) and `reports/stage4h/` ([stage4h_metrics.json](file:///c:/Users/mansi/Downloads/Capstone_Fraud_Detection/reports/stage4h/stage4h_metrics.json), [stage4h_report.md](file:///c:/Users/mansi/Downloads/Capstone_Fraud_Detection/reports/stage4h/stage4h_report.md), [stage4h_comparison.png](file:///c:/Users/mansi/Downloads/Capstone_Fraud_Detection/reports/stage4h/stage4h_comparison.png), [stage4h_per_snapshot.png](file:///c:/Users/mansi/Downloads/Capstone_Fraud_Detection/reports/stage4h/stage4h_per_snapshot.png)).
+
+---
+
+## Independent Verification Checklist
+
+| # | Verification Requirement | Status | Audited Evidence |
+|---|---|---|---|
+| 1 | `QuantileTransformer` (`RankGauss`) + post-`StandardScaler` fitted strictly on Train `Steps 1–34` | **PASS** | Inspected [rankgauss_transformer_train_1_34.joblib](file:///c:/Users/mansi/Downloads/Capstone_Fraud_Detection/models/stage4h/rankgauss_transformer_train_1_34.joblib) independently on CPU: fitted on `136,265` Train nodes (`Steps 1–34`); Train output verified `max(\|mean\|) = 8.8e-05`, `std ∈ [0.99912, 1.00079]`; transformed Steps `43–49` remain bounded (`frac(\|z\| > 5) = 1.7309%`). |
+| 2 | Leakage-free 5-fold chronological OOF embeddings for Experiment B | **PASS** | Verified in [src/train_stage4h.py](file:///c:/Users/mansi/Downloads/Capstone_Fraud_Detection/src/train_stage4h.py): Train `Steps 1–34` partitioned into 5 disjoint snapshot blocks (`1–7`, `8–14`, `15–21`, `22–28`, `29–34`) with `cross_timestep_edges = 0`; each block's encoder trained strictly on the other 4 blocks; Validation (`35–41`) and Test (`42–49`) never entered OOF encoder or `HistGradientBoosting` fitting. |
+| 3 | Independent reproduction of ALL `27` runs (`9` ExpA neural + `3` ExpA0 + `15` ExpB) | **PASS** | Reloaded every saved `.pt` and `.joblib` checkpoint (`34` files in `models/stage4h/`) and re-computed Validation `35–41` thresholds (`0.01–0.99`) and Test `42–49` metrics (`PR-AUC`, `ROC-AUC`, `F1`, `Prec`, `Rec`, `Brier`, `ECE`, CM): **`ALL_27_RUNS_CKPT_REPRO_DIFFS: []`** (zero mismatches). |
+| 4 | Validation-only architecture/hyperparameter selection & post-selection Test seal | **PASS** | Confirmed winners selected strictly on mean Validation PR-AUC (`ExpA2_RankGauss182_BiDirGCN = 0.9300 ± 0.0025`, `ExpB2_Hybrid_GCNAvg93Emb_RegHGB = 0.9226 ± 0.0078`); Test `Steps 42–49` evaluated only post-selection. |
+| 5 | Negative & unstable results recorded honestly | **PASS** | Preserved `ExpA3_RankGauss182_NoGraph` early-stop collapses (`seeds 123, 456` at Ep `6, 4`, `43–49 ROC = 0.4744 ± 0.1759`) and `ExpB3_Hybrid_RG182BiDirEmb_HGB` `seed=42` collapse (`Val PR = 0.5442`, `Test PR = 0.2093`), plus lower performance across all 5 Hybrid HGB variants relative to `ExpA2`. |
+| 6 | Cross-artifact & plot consistency + Stage 1–4G preservation | **PASS** | Verified agreement across JSON, Markdown, and both PNG figures; verified unchanged byte sizes & timestamps across all Stage 1–4G files (`models/nextgen_gnn_best.pt`, `models/stage4f/stage4f_champion.pt`, `models/hist_gradient_boosting.joblib`, `reports/stage4f_*`, `reports/stage4g/*`, `src/train_stage4f.py`, `src/diagnose_stage4g.py`). Stage 5 remains paused. |

@@ -1,8 +1,14 @@
+# Nested local backup folder (not part of distributable repo)
+Capstone_Fraud_Detection/
+
 # Raw large dataset files (> 100MB)
 dataset/
 *.csv
 *.txt
 !requirements.txt
+!results/graphs/*.csv
+!results/stage5/*.csv
+!app/sample_data/*.csv
 
 # Processed graph binaries (> 100MB)
 processed/*.pt
@@ -30,3 +36,15 @@ scratch/
 # OS specific
 Thumbs.db
 .DS_Store
+dataset/txs_features.txt
+processed/elliptic_pyg_data.pt
+processed/temporal_snapshots.pt
+
+# Stage 6 Application runtime state & frontend build artifacts
+app/data/*.db
+app/data/*.db-*
+app/data/runs_cache/
+app/frontend/node_modules/
+app/frontend/dist/
+app/frontend/.env.local
+.pytest_cache/

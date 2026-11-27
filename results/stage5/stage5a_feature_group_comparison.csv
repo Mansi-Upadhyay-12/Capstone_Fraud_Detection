@@ -1,0 +1,4 @@
+feature_group,feature_count,feature_count_pct,hgb_val_single_perm_share_pct,hgb_val_single_perm_per_feat,hgb_val_top20_count,hgb_val_block_prauc_drop,hgb_test42_block_prauc_drop,hgb_test43_49_block_roc_drop,gnn_val_ig_share_pct,gnn_val_ig_per_feat,gnn_val_top20_count,gnn_test42_ig_share_pct,gnn_test43_49_ig_share_pct,gnn_val_zero_mask_prauc_drop,gnn_test42_zero_mask_prauc_drop,gnn_test43_49_zero_mask_roc_drop
+Local93,93,51.1,43.86,0.001383,14,0.6093,0.5481,0.1746,39.79,0.802051,6,40.41,42.6,0.6694,0.4725,0.0424
+Aggregate72,72,39.56,6.83,0.000258,5,0.0346,0.0318,0.1143,51.05,1.329339,13,50.42,49.72,0.0085,0.0129,0.0999
+Domain17,17,9.34,49.31,0.008658,1,0.1521,0.096,-0.0035,9.16,1.010206,1,9.18,7.68,0.0139,0.0047,-0.0076

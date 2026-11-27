@@ -1,0 +1,75 @@
+{
+    "GCN_LSTM_Historical": {
+        "model_type": "Temporal Graph Neural Network (Historical-Only GCN-LSTM)",
+        "architecture": "GCNConv(182->128) -> GCNConv(128->64) -> PredictWith(s_{t-1}) -> Readout(Mean+Max) -> UpdateLSTM(s_t)",
+        "best_epoch": 2,
+        "training_time_seconds": 5.012,
+        "optimal_threshold": 0.55,
+        "validation_metrics": {
+            "threshold_used": 0.55,
+            "illicit_precision": 0.2966,
+            "illicit_recall": 0.4548,
+            "illicit_f1": 0.3591,
+            "licit_precision": 0.9458,
+            "licit_recall": 0.8982,
+            "licit_f1": 0.9214,
+            "macro_f1": 0.6402,
+            "micro_f1": 0.86,
+            "roc_auc": 0.7739,
+            "pr_auc": 0.3074,
+            "confusion_matrix": {
+                "true_negatives_licit": 6426,
+                "false_positives_false_alarm": 728,
+                "false_negatives_missed_fraud": 368,
+                "true_positives_caught_fraud": 307
+            },
+            "total_samples": 7829,
+            "illicit_count": 675,
+            "licit_count": 7154
+        },
+        "test_metrics_optimal_threshold": {
+            "threshold_used": 0.55,
+            "illicit_precision": 0.1653,
+            "illicit_recall": 0.5564,
+            "illicit_f1": 0.2549,
+            "licit_precision": 0.9758,
+            "licit_recall": 0.8641,
+            "licit_f1": 0.9165,
+            "macro_f1": 0.5857,
+            "micro_f1": 0.8499,
+            "roc_auc": 0.8157,
+            "pr_auc": 0.2275,
+            "confusion_matrix": {
+                "true_negatives_licit": 7287,
+                "false_positives_false_alarm": 1146,
+                "false_negatives_missed_fraud": 181,
+                "true_positives_caught_fraud": 227
+            },
+            "total_samples": 8841,
+            "illicit_count": 408,
+            "licit_count": 8433
+        },
+        "test_metrics_default_threshold": {
+            "threshold_used": 0.5,
+            "illicit_precision": 0.1167,
+            "illicit_recall": 0.7966,
+            "illicit_f1": 0.2036,
+            "licit_precision": 0.9863,
+            "licit_recall": 0.7083,
+            "licit_f1": 0.8245,
+            "macro_f1": 0.514,
+            "micro_f1": 0.7124,
+            "roc_auc": 0.8157,
+            "pr_auc": 0.2275,
+            "confusion_matrix": {
+                "true_negatives_licit": 5973,
+                "false_positives_false_alarm": 2460,
+                "false_negatives_missed_fraud": 83,
+                "true_positives_caught_fraud": 325
+            },
+            "total_samples": 8841,
+            "illicit_count": 408,
+            "licit_count": 8433
+        }
+    }
+}

@@ -1,0 +1,334 @@
+{
+    "feature_importance": {
+        "local_features_importance_share": 0.7067,
+        "aggregate_features_importance_share": 0.1741,
+        "domain_features_importance_share": 0.1191,
+        "top_features": [
+            {
+                "rank": 1,
+                "feature_index": 52,
+                "feature_name": "Local_feature_53",
+                "importance": 0.065192
+            },
+            {
+                "rank": 2,
+                "feature_index": 54,
+                "feature_name": "Local_feature_55",
+                "importance": 0.055026
+            },
+            {
+                "rank": 3,
+                "feature_index": 40,
+                "feature_name": "Local_feature_41",
+                "importance": 0.042674
+            },
+            {
+                "rank": 4,
+                "feature_index": 169,
+                "feature_name": "size",
+                "importance": 0.0403
+            },
+            {
+                "rank": 5,
+                "feature_index": 48,
+                "feature_name": "Local_feature_49",
+                "importance": 0.037281
+            },
+            {
+                "rank": 6,
+                "feature_index": 46,
+                "feature_name": "Local_feature_47",
+                "importance": 0.035753
+            },
+            {
+                "rank": 7,
+                "feature_index": 89,
+                "feature_name": "Local_feature_90",
+                "importance": 0.027935
+            },
+            {
+                "rank": 8,
+                "feature_index": 4,
+                "feature_name": "Local_feature_5",
+                "importance": 0.025749
+            },
+            {
+                "rank": 9,
+                "feature_index": 171,
+                "feature_name": "num_output_addresses",
+                "importance": 0.025589
+            },
+            {
+                "rank": 10,
+                "feature_index": 42,
+                "feature_name": "Local_feature_43",
+                "importance": 0.023228
+            },
+            {
+                "rank": 11,
+                "feature_index": 66,
+                "feature_name": "Local_feature_67",
+                "importance": 0.022904
+            },
+            {
+                "rank": 12,
+                "feature_index": 53,
+                "feature_name": "Local_feature_54",
+                "importance": 0.019181
+            },
+            {
+                "rank": 13,
+                "feature_index": 17,
+                "feature_name": "Local_feature_18",
+                "importance": 0.018877
+            },
+            {
+                "rank": 14,
+                "feature_index": 58,
+                "feature_name": "Local_feature_59",
+                "importance": 0.017973
+            },
+            {
+                "rank": 15,
+                "feature_index": 60,
+                "feature_name": "Local_feature_61",
+                "importance": 0.017488
+            },
+            {
+                "rank": 16,
+                "feature_index": 1,
+                "feature_name": "Local_feature_2",
+                "importance": 0.014923
+            },
+            {
+                "rank": 17,
+                "feature_index": 131,
+                "feature_name": "Aggregate_feature_39",
+                "importance": 0.014301
+            },
+            {
+                "rank": 18,
+                "feature_index": 39,
+                "feature_name": "Local_feature_40",
+                "importance": 0.014167
+            },
+            {
+                "rank": 19,
+                "feature_index": 137,
+                "feature_name": "Aggregate_feature_45",
+                "importance": 0.013808
+            },
+            {
+                "rank": 20,
+                "feature_index": 168,
+                "feature_name": "fees",
+                "importance": 0.01367
+            }
+        ]
+    },
+    "gnn_subgraph_explanation": {
+        "target_node_index": 167212,
+        "target_node_fraud_prob": 0.5784,
+        "computation_subgraph_nodes": 14,
+        "computation_subgraph_edges": 13,
+        "top_saliency_features": [
+            {
+                "rank": 1,
+                "feature_index": 5,
+                "feature_name": "Local_feature_6",
+                "attribution_score": 0.000827
+            },
+            {
+                "rank": 2,
+                "feature_index": 52,
+                "feature_name": "Local_feature_53",
+                "attribution_score": 0.000822
+            },
+            {
+                "rank": 3,
+                "feature_index": 89,
+                "feature_name": "Local_feature_90",
+                "attribution_score": 0.000791
+            },
+            {
+                "rank": 4,
+                "feature_index": 62,
+                "feature_name": "Local_feature_63",
+                "attribution_score": 0.000776
+            },
+            {
+                "rank": 5,
+                "feature_index": 88,
+                "feature_name": "Local_feature_89",
+                "attribution_score": 0.000743
+            },
+            {
+                "rank": 6,
+                "feature_index": 51,
+                "feature_name": "Local_feature_52",
+                "attribution_score": 0.000708
+            },
+            {
+                "rank": 7,
+                "feature_index": 122,
+                "feature_name": "Aggregate_feature_30",
+                "attribution_score": 0.000685
+            },
+            {
+                "rank": 8,
+                "feature_index": 180,
+                "feature_name": "out_BTC_median",
+                "attribution_score": 0.000664
+            },
+            {
+                "rank": 9,
+                "feature_index": 159,
+                "feature_name": "Aggregate_feature_67",
+                "attribution_score": 0.000653
+            },
+            {
+                "rank": 10,
+                "feature_index": 166,
+                "feature_name": "out_txs_degree",
+                "attribution_score": 0.000625
+            }
+        ]
+    },
+    "fraud_ring_analysis": {
+        "total_test_illicit_nodes": 408,
+        "isolated_singletons": 298,
+        "multi_node_coordinated_rings": 21,
+        "ring_topologies": {
+            "peeling_chain": 1,
+            "fan_out_dispersion": 2,
+            "fan_in_aggregation": 3,
+            "complex_mesh": 15
+        },
+        "sample_rings": [
+            {
+                "ring_id": "RING_001",
+                "total_transactions": 283,
+                "illicit_transactions": 162,
+                "intermediary_bridge_transactions": 121,
+                "transfer_edges": 304,
+                "illicit_purity": 0.5724,
+                "topology_type": "complex_mesh"
+            },
+            {
+                "ring_id": "RING_002",
+                "total_transactions": 4,
+                "illicit_transactions": 2,
+                "intermediary_bridge_transactions": 2,
+                "transfer_edges": 3,
+                "illicit_purity": 0.5,
+                "topology_type": "complex_mesh"
+            },
+            {
+                "ring_id": "RING_003",
+                "total_transactions": 32,
+                "illicit_transactions": 19,
+                "intermediary_bridge_transactions": 13,
+                "transfer_edges": 35,
+                "illicit_purity": 0.5938,
+                "topology_type": "complex_mesh"
+            },
+            {
+                "ring_id": "RING_004",
+                "total_transactions": 111,
+                "illicit_transactions": 12,
+                "intermediary_bridge_transactions": 99,
+                "transfer_edges": 124,
+                "illicit_purity": 0.1081,
+                "topology_type": "complex_mesh"
+            },
+            {
+                "ring_id": "RING_005",
+                "total_transactions": 79,
+                "illicit_transactions": 52,
+                "intermediary_bridge_transactions": 27,
+                "transfer_edges": 83,
+                "illicit_purity": 0.6582,
+                "topology_type": "complex_mesh"
+            },
+            {
+                "ring_id": "RING_006",
+                "total_transactions": 24,
+                "illicit_transactions": 23,
+                "intermediary_bridge_transactions": 1,
+                "transfer_edges": 23,
+                "illicit_purity": 0.9583,
+                "topology_type": "fan_in_aggregation"
+            },
+            {
+                "ring_id": "RING_007",
+                "total_transactions": 4,
+                "illicit_transactions": 3,
+                "intermediary_bridge_transactions": 1,
+                "transfer_edges": 3,
+                "illicit_purity": 0.75,
+                "topology_type": "fan_out_dispersion"
+            },
+            {
+                "ring_id": "RING_008",
+                "total_transactions": 6,
+                "illicit_transactions": 3,
+                "intermediary_bridge_transactions": 3,
+                "transfer_edges": 5,
+                "illicit_purity": 0.5,
+                "topology_type": "fan_in_aggregation"
+            },
+            {
+                "ring_id": "RING_009",
+                "total_transactions": 7,
+                "illicit_transactions": 2,
+                "intermediary_bridge_transactions": 5,
+                "transfer_edges": 6,
+                "illicit_purity": 0.2857,
+                "topology_type": "complex_mesh"
+            },
+            {
+                "ring_id": "RING_010",
+                "total_transactions": 22,
+                "illicit_transactions": 12,
+                "intermediary_bridge_transactions": 10,
+                "transfer_edges": 21,
+                "illicit_purity": 0.5455,
+                "topology_type": "complex_mesh"
+            }
+        ],
+        "comparison_summary": {
+            "ground_truth_rings": 21,
+            "ring_topologies": {
+                "peeling_chain": 1,
+                "fan_out_dispersion": 2,
+                "fan_in_aggregation": 3,
+                "complex_mesh": 15
+            },
+            "ring_size_distribution": {
+                "2_to_5_transactions": 10,
+                "6_to_10_transactions": 3,
+                "greater_than_10_transactions": 8
+            },
+            "model_comparison": {
+                "Random_Forest": {
+                    "paradigm": "Tabular ML",
+                    "ring_detection_mechanism": "Independent IID node classification (ignores structural connections)",
+                    "detected_ring_recall": "46.2%",
+                    "limitations": "Completely fractures multi-hop rings; fails to identify unlabeled intermediary mules in the laundering chain."
+                },
+                "Static_GCN": {
+                    "paradigm": "Static GNN",
+                    "ring_detection_mechanism": "Local message passing captures topological graph neighborhoods",
+                    "detected_ring_recall": "21.5%",
+                    "limitations": "Suffers severe concept drift across temporal snapshots; low overall illicit recall limits ring detection."
+                },
+                "Temporal_GCN_LSTM": {
+                    "paradigm": "Temporal GNN",
+                    "ring_detection_mechanism": "Joint spatial convolution + temporal memory captures evolving macro-ring state",
+                    "detected_ring_recall": "73.1%",
+                    "advantages": "Intercepts 73% of multi-node laundering rings by propagating representations through unlabeled bridge nodes."
+                }
+            }
+        }
+    }
+}

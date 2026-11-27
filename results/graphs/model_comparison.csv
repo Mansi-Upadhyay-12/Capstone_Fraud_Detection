@@ -1,0 +1,11 @@
+Model_Key,Model_Name,Paradigm,Threshold,Accuracy,Illicit_Precision,Illicit_Recall,Illicit_F1,PR_AUC,ROC_AUC,True_Positives,False_Positives,True_Negatives,False_Negatives,Training_Time_s,Inference_Time_s
+Logistic_Regression,Logistic Regression,Tabular Linear,0.9,0.9032,0.2383,0.5,0.3228,0.194,0.8574,204,652,7781,204,2.72,0.0433
+Random_Forest,Random Forest,Tabular Ensemble,0.59,0.9723,0.8655,0.473,0.6117,0.5458,0.8351,193,30,8403,215,3.82,0.1124
+HistGradientBoosting,HistGradientBoosting,Tabular Boosting,0.79,0.9729,0.8853,0.473,0.6166,0.5646,0.8848,193,25,8408,215,34.96,0.1642
+MLP_Baseline,MLP Neural Network,Deep Tabular,0.89,0.9657,0.7143,0.4289,0.536,0.4742,0.836,175,70,8363,233,36.75,0.0785
+Static_GCN_Original,Static GCN (Baseline),Static GNN,0.6,0.8457,0.1145,0.348,0.1723,0.1211,0.7875,142,1098,7335,266,40.0,0.2068
+Improved_Residual_GCN,Improved Residual GCN,Static GNN (Res+LN),0.59,0.9253,0.2766,0.3824,0.321,0.2761,0.7546,156,408,8025,252,52.68,0.3624
+Static_GAT_Original,Static GAT (Baseline),Static GNN,0.7,0.8351,0.1266,0.4363,0.1963,0.1258,0.7966,178,1228,7205,230,44.14,0.2838
+Improved_Residual_GAT,Improved Residual GAT,Static GNN (Res+LN),0.9,0.9097,0.2329,0.4167,0.2988,0.373,0.8201,170,560,7873,238,178.89,0.2563
+Temporal_GCN_LSTM,Temporal GCN-LSTM,Temporal GNN,0.9,0.653,0.091,0.7255,0.1617,0.2003,0.7805,296,2956,5477,112,60.0,0.1397
+Historical_GCN_LSTM,Historical GCN-LSTM,Temporal GNN (Causal),0.9,0.6502,0.0906,0.7279,0.1611,0.2003,0.7805,297,2982,5451,111,60.0,0.1717

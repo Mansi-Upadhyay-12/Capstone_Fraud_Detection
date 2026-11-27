@@ -1,0 +1,133 @@
+{
+  "stage": "Stage 5D - Publication-Quality Research Visualizations",
+  "timestamp": "2026-11-26 21:43:24",
+  "execution_time_sec": 31.82,
+  "verification": {
+    "figures_generated": 8,
+    "files_created": 16,
+    "all_non_empty": true,
+    "protected_files_untouched": true
+  },
+  "figures": [
+    {
+      "figure_id": "Figure 1",
+      "title": "Elliptic++ Dataset Overview",
+      "png_path": "C:\\Users\\mansi\\Downloads\\Capstone_Fraud_Detection\\figures\\stage5\\stage5d_fig1_dataset_overview.png",
+      "pdf_path": "C:\\Users\\mansi\\Downloads\\Capstone_Fraud_Detection\\figures\\stage5\\stage5d_fig1_dataset_overview.pdf",
+      "png_bytes": 593522,
+      "pdf_bytes": 48557,
+      "sources": [
+        "processed/temporal_snapshots.pt",
+        "processed/metadata.json",
+        "reports/dataset_inspection_report.json",
+        "reports/stage5/stage5c_fraud_ring_analysis.json"
+      ],
+      "description": "Visualizes total scale (203,769 nodes, 234,355 strictly intra-timestep edges), class composition (77.15% Unknown, 20.62% Licit, 2.23% Illicit), 182-feature breakdown (93/72/17), and per-snapshot prevalence across all 49 timesteps.",
+      "limitations": "Unknown (-1) transactions constitute 77.15% of nodes; zero cross-snapshot transaction links exist in the Elliptic++ graph."
+    },
+    {
+      "figure_id": "Figure 2",
+      "title": "Model Performance Comparison (Validation vs. Test)",
+      "png_path": "C:\\Users\\mansi\\Downloads\\Capstone_Fraud_Detection\\figures\\stage5\\stage5d_fig2_model_performance.png",
+      "pdf_path": "C:\\Users\\mansi\\Downloads\\Capstone_Fraud_Detection\\figures\\stage5\\stage5d_fig2_model_performance.pdf",
+      "png_bytes": 377487,
+      "pdf_bytes": 44960,
+      "sources": [
+        "reports/stage3_baselines_metrics.json",
+        "reports/stage4a_gnn_static_metrics.json",
+        "reports/stage4c_evolvegcn_metrics_recalibrated.json",
+        "reports/stage4d_nextgen_experiments_metrics.json",
+        "reports/stage4h/stage4h_metrics.json"
+      ],
+      "description": "Compares classical tabular models, static/temporal early GNNs, Local-93 baselines, hybrid GNN+HGB, and the Stage 4H champion ExpA2_RankGauss182_BiDirGCN across Validation (35-41) and Test (42-49) PR-AUC, ROC-AUC, precision, recall, and F1.",
+      "limitations": "All architectures exhibit substantial validation-to-test PR-AUC drop driven by post-shutdown Steps 43-49; ExpA2 achieves the highest Test PR-AUC (0.6023) while HistGB attains slightly higher Test F1 (0.6166 vs. 0.5972) via higher precision (88.53%)."
+    },
+    {
+      "figure_id": "Figure 3",
+      "title": "Feature Importance Comparison (HGB Permutation vs. BiDirGCN IG)",
+      "png_path": "C:\\Users\\mansi\\Downloads\\Capstone_Fraud_Detection\\figures\\stage5\\stage5d_fig3_feature_importance.png",
+      "pdf_path": "C:\\Users\\mansi\\Downloads\\Capstone_Fraud_Detection\\figures\\stage5\\stage5d_fig3_feature_importance.pdf",
+      "png_bytes": 401552,
+      "pdf_bytes": 40319,
+      "sources": [
+        "results/stage5/stage5a_hgb_permutation_importance.csv",
+        "results/stage5/stage5a_gnn_integrated_gradients.csv",
+        "results/stage5/stage5a_feature_group_comparison.csv"
+      ],
+      "description": "Presents top-12 Validation features and group shares for HistGB PR-AUC permutation importance alongside BiDirGCN Integrated Gradients magnitude (|Graph IG|).",
+      "limitations": "These two metrics measure fundamentally different quantities (predictive PR-AUC drop vs. signed input-to-logit sensitivity); collinear features split permutation drops differently from gradient attributions."
+    },
+    {
+      "figure_id": "Figure 4",
+      "title": "Individual Fraud Prediction Explanations (Validation TP/FP/FN/TN)",
+      "png_path": "C:\\Users\\mansi\\Downloads\\Capstone_Fraud_Detection\\figures\\stage5\\stage5d_fig4_individual_explanations.png",
+      "pdf_path": "C:\\Users\\mansi\\Downloads\\Capstone_Fraud_Detection\\figures\\stage5\\stage5d_fig4_individual_explanations.pdf",
+      "png_bytes": 673197,
+      "pdf_bytes": 42964,
+      "sources": [
+        "reports/stage5/stage5b_individual_explanations.json",
+        "reports/stage5/stage5b_ig_final_validation.md"
+      ],
+      "description": "Displays positive (fraud-pulling) and negative (licit-pulling) signed IG feature attributions and self vs. neighbor logit balances for representative Validation TP, FP, FN, and TN transactions.",
+      "limitations": "Attributions explain how the frozen GNN produced its score relative to a zero RankGauss reference rather than providing legal proof of fraud; Stage 5B M=200 completeness audit guarantees <=0.90% relative error across all 12 audited cases."
+    },
+    {
+      "figure_id": "Figure 5",
+      "title": "Directed Suspicious Subgraph & Candidate Fraud-Ring Networks",
+      "png_path": "C:\\Users\\mansi\\Downloads\\Capstone_Fraud_Detection\\figures\\stage5\\stage5d_fig5_suspicious_subgraphs.png",
+      "pdf_path": "C:\\Users\\mansi\\Downloads\\Capstone_Fraud_Detection\\figures\\stage5\\stage5d_fig5_suspicious_subgraphs.pdf",
+      "png_bytes": 1589472,
+      "pdf_bytes": 68851,
+      "sources": [
+        "results/stage5/stage5c_candidate_subgraphs.csv",
+        "results/stage5/stage5c_cluster_nodes.csv",
+        "processed/temporal_snapshots.pt"
+      ],
+      "description": "Renders 4 representative intra-snapshot directed candidate networks (Validation C_t35_002 and C_t41_002; Exploratory Test C_t42_001 and C_t45_001) preserving src -> dst transfer arrows, hub highlights, and post-hoc I/L/? labels.",
+      "limitations": "C_t35_002 (23/24 Illicit) and C_t42_001 (30/38 Illicit) confirm coordinated illicit structures, whereas post-shutdown C_t45_001 (25/25 Unknown) shows candidate clusters without published illicit labels."
+    },
+    {
+      "figure_id": "Figure 6",
+      "title": "Fraud-Ring Candidate Structural & Score Statistics",
+      "png_path": "C:\\Users\\mansi\\Downloads\\Capstone_Fraud_Detection\\figures\\stage5\\stage5d_fig6_fraud_ring_statistics.png",
+      "pdf_path": "C:\\Users\\mansi\\Downloads\\Capstone_Fraud_Detection\\figures\\stage5\\stage5d_fig6_fraud_ring_statistics.pdf",
+      "png_bytes": 418918,
+      "pdf_bytes": 73869,
+      "sources": [
+        "results/stage5/stage5c_candidate_subgraphs.csv",
+        "results/stage5/stage5c_group_statistics.csv"
+      ],
+      "description": "Separates Isolated Singletons, Suspicious Pairs, Multi-Node Non-Candidate Clusters, and Potential Fraud-Ring Candidates, alongside motif breakdowns and RingScore vs. cluster size across Validation and Exploratory Test.",
+      "limitations": "Distinguishes isolated and 2-node alerts from multi-step candidate rings; candidacy relies strictly on frozen predictions (P >= 0.57) and topology without label supervision."
+    },
+    {
+      "figure_id": "Figure 7",
+      "title": "Temporal Distribution & Step 42 -> Step 43 Regime Shift",
+      "png_path": "C:\\Users\\mansi\\Downloads\\Capstone_Fraud_Detection\\figures\\stage5\\stage5d_fig7_temporal_distribution.png",
+      "pdf_path": "C:\\Users\\mansi\\Downloads\\Capstone_Fraud_Detection\\figures\\stage5\\stage5d_fig7_temporal_distribution.pdf",
+      "png_bytes": 481709,
+      "pdf_bytes": 42140,
+      "sources": [
+        "results/stage5/stage5c_temporal_group_analysis.csv",
+        "reports/stage4h/stage4h_metrics.json"
+      ],
+      "description": "Tracks direct suspicious clusters and candidates across all 49 snapshots (Panel A) alongside per-snapshot Test PR-AUC/ROC-AUC trajectories from Steps 42 to 49 (Panel B).",
+      "limitations": "Demonstrates the structural shock at Step 42->43 following darknet shutdown: ExpA2 PR-AUC drops from 0.8975 (Step 42) to 0.0469 (Step 43), while flagged cluster counts drop sharply after Step 42."
+    },
+    {
+      "figure_id": "Figure 8",
+      "title": "Model Limitations & Post-Shutdown Detection Collapse",
+      "png_path": "C:\\Users\\mansi\\Downloads\\Capstone_Fraud_Detection\\figures\\stage5\\stage5d_fig8_model_limitations.png",
+      "pdf_path": "C:\\Users\\mansi\\Downloads\\Capstone_Fraud_Detection\\figures\\stage5\\stage5d_fig8_model_limitations.pdf",
+      "png_bytes": 382503,
+      "pdf_bytes": 45708,
+      "sources": [
+        "results/stage5/stage5c_group_statistics.csv",
+        "results/stage5/stage5c_candidate_subgraphs.csv",
+        "reports/stage4h/stage4h_metrics.json"
+      ],
+      "description": "Quantifies post-hoc ground-truth coordinated ring detection collapse (20/25 at Step 42 vs. 0/9 in Steps 43-49), Unknown (-1) dominance in candidate nodes, and post-shutdown single-node precision/recall degradation.",
+      "limitations": "Honest limitation diagnostic: neither ExpA2 nor HistGB generalizes effectively at fixed validation thresholds under the extreme post-shutdown distribution and prevalence shift (Steps 43-49)."
+    }
+  ]
+}
